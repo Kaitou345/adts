@@ -1,3 +1,4 @@
+
 //Implementing a Stack ADT with a vector
 
 #ifndef STACK_H
@@ -6,11 +7,12 @@
 #include <vector>
 using namespace std;
 
+template<typename T>
 class Stack
 {
 private:
 
-      vector<int> data;
+      vector<T> data;
   
 
 public:
@@ -22,15 +24,26 @@ public:
    // No d'tor needs to be declared
    // The vector "knows" how to destroy itself
 
-   int size();
+    int size() const { return data.size(); }
 
-   void push(int);
+    void push(const T& data)
+    {
+        this->data.push_back(data);
+    }
+    void pop()
+    {
+        this->data.pop_back();
+    }
 
-   void pop();
-
-   int top();
-
-   void clear();
+    // returns the data at the top of the stack
+    int top() const
+    {
+        return this->data.at(data.size() - 1);
+    }
+    void clear()
+    {
+        this->data.clear();
+    }
 
 };
 
