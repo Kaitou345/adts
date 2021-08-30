@@ -1,26 +1,26 @@
 #include <iostream> 
 #include <string> 
-#include "StackV.h"//Use vector implementation of Stack
+#include "StackV.h"	//Use vector implementation of Stack
 
 using namespace std;
         
         
-string reverseString(string str)
+string reverseString(const string& str)
 {
-     string res;
-     Stack stk;
-
-   for (auto ch : str ) 
-      stk.push(ch);
+    string result;
+    Stack<char> stk;
+    
+    for (auto ch : str ) 
+        stk.push(ch);
 
     
     while( stk.size() > 0)
-       {
-	  res +=  stk.top();
-	   stk.pop();
-       }
+    {
+        result +=  stk.top();
+        stk.pop();
+    }
 
-   return res;
+   return result;
 }
 
 
