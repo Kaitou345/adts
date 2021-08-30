@@ -6,11 +6,12 @@
 #include <vector>
 using namespace std;
 
+template<typename T>
 class Stack
 {
 private:
 
-      vector<int> data;
+      vector<T> data;
   
 
 public:
@@ -22,9 +23,9 @@ public:
    // No d'tor needs to be declared
    // The vector "knows" how to destroy itself
 
-   int size();
-
-   void push(int);
+   int size() const;
+   
+   void push(T);
 
    void pop();
 
